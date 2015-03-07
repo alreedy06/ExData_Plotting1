@@ -15,9 +15,9 @@ plot2 <- function() {
     
     powerdatatbl <- powerdatatbl %>% filter(Date =="2007-02-01" | Date =="2007-02-02")
     powerdatatbl$Weekday <- weekdays(powerdatatbl$Date, abbreviate = TRUE)
-    png(filename = "Plot2.png", width = 480, height = 480 )
+    png(filename = "Plot2.png", width = 480, height = 480, bg = "transparent")
     plot(powerdatatbl$NewTime, powerdatatbl$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)" , xlab = "")
-    dev.off()
+    graphics.off()
     
     #hist(powerdatatbl$Global_active_power, freq=TRUE , col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)" )
 }

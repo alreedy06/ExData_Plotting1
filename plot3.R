@@ -15,7 +15,7 @@ plot3 <- function() {
     
     powerdatatbl <- powerdatatbl %>% filter(Date =="2007-02-01" | Date =="2007-02-02")
     powerdatatbl$Weekday <- weekdays(powerdatatbl$Date, abbreviate = TRUE)
-    png(filename = "Plot3.png", width = 480, height = 480 )
+    png(filename = "Plot3.png", width = 480, height = 480, bg = "transparent")
     plot(powerdatatbl$NewTime, powerdatatbl$Sub_metering_1, type = "l", ylab = "Energy sub metering" , xlab = "")
     lines(powerdatatbl$NewTime, powerdatatbl$Sub_metering_2, type = "l", col = "red")
     lines(powerdatatbl$NewTime, powerdatatbl$Sub_metering_3, type = "l", col = "blue")
