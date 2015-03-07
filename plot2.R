@@ -18,6 +18,4 @@ plot2 <- function() {
     png(filename = "Plot2.png", width = 480, height = 480, bg = "transparent")
     plot(powerdatatbl$NewTime, powerdatatbl$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)" , xlab = "")
     graphics.off()
-    
-    #hist(powerdatatbl$Global_active_power, freq=TRUE , col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)" )
 }
