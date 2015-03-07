@@ -27,5 +27,4 @@ plot4 <- function() {
     plot(powerdatatbl$NewTime, powerdatatbl$Global_reactive_power, type = "l", ylab = "Global_reactive_power" , xlab = "datetime")
     graphics.off()
     
-    #hist(powerdatatbl$Global_active_power, freq=TRUE , col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)" )
 }
