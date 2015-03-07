@@ -1,4 +1,4 @@
-plot1 <- function() {
+plot2 <- function() {
     require(dplyr)
     download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "power_data.zip")
     unzip("power_data.zip")
@@ -14,7 +14,10 @@ plot1 <- function() {
                                        format = "%Y-%m-%d %H:%M:%S")
     
     powerdatatbl <- powerdatatbl %>% filter(Date =="2007-02-01" | Date =="2007-02-02")
-    png(filename = "plot1.png", width = 480, height = 480, bg ="transparent")
-    hist(powerdatatbl$Global_active_power, freq=TRUE , col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)" )
-    graphics.off()
+    powerdatatbl$Weekday <- weekdays(powerdatatbl$Date, abbreviate = TRUE)
+    png(filename = "Plot2.png", width = 480, height = 480 )
+    plot(powerdatatbl$NewTime, powerdatatbl$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)" , xlab = "")
+    dev.off()
+    
+    #hist(powerdatatbl$Global_active_power, freq=TRUE , col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)" )
 }
